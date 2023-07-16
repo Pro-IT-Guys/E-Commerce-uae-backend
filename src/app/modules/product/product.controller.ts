@@ -60,8 +60,6 @@ const updateProduct = catchAsync(async (req: Request, res: Response) => {
     // console.log(productData?.restImage[0]?.split(',')?.length, 'condition')
   }
 
-
-
   if (Object.keys(uploadedFiles).length !== 0) {
     if (uploadedFiles.frontImage) {
       const frontImageWebP = uploadedFiles.frontImage.map(
