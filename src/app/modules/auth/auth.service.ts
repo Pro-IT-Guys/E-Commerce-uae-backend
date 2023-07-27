@@ -142,10 +142,28 @@ const loggedInUser = async (token: string): Promise<IUser> => {
   return user
 }
 
+const resetPassword = async (
+  email: string,
+  password: string
+): Promise<void> => {
+  const user = await userModel.findOne({ email })
+  if (!user) throw new ApiError(httpStatus.NOT_FOUND, 'User not found')
+
+  const hashedPassword = await hashPassword(password)
+  const updatedUser = await userModel.findOneAndUpdate(
+    { email },
+    { password: hashedPassword },
+    { new: true }
+  )
+  if (!updatedUser)
+    throw new ApiError(httpStatus.BAD_REQUEST, 'Password reset failed')
+}
+
 export const AuthService = {
   signupUser,
   verifyOtp,
   resendOtp,
   loginUser,
   loggedInUser,
+  resetPassword,
 }
