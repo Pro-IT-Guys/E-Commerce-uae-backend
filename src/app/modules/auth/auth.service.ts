@@ -124,7 +124,7 @@ const loginUser = async (userData: IUser): Promise<IUserResponse> => {
   const accessToken = jwt.sign({ email }, config.access_token as string, {
     expiresIn: '1d',
   })
-  return { accessToken, data: { role: user.role } }
+  return { accessToken, data: { role: user.role, isVerified: user.isVerified } }
 }
 
 const loggedInUser = async (token: string): Promise<IUser> => {
