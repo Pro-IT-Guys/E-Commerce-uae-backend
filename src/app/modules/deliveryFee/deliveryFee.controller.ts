@@ -16,10 +16,10 @@ const createFee = catchAsync(async (req: Request, res: Response) => {
 })
 
 const updateFee = catchAsync(async (req: Request, res: Response) => {
-  const deliveryData = req.body
+  const { dataPayload } = req.body
   const { id } = req.params
 
-  const data = await DeliveryFeeService.updateFee(id, deliveryData)
+  const data = await DeliveryFeeService.updateFee(id, dataPayload)
   const responseData = {
     data,
     message: 'Delivery fee updated successfully',

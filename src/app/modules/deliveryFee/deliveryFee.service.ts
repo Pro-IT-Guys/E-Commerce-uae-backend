@@ -54,7 +54,7 @@ const updateFee = async (
   id: string,
   dataPayload: {
     state_code: string
-    city_name: string
+    city_name: string | undefined
     delivery_fee: number
   }
 ): Promise<ICountry[]> => {

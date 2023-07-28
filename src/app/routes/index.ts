@@ -18,6 +18,7 @@ import { TermsConditionRoute } from '../modules/terms-condition/terms.route'
 import { PrivacyPolicyRoute } from '../modules/privacyPolicy/privacy.route'
 import { ReturnPolicyRoute } from '../modules/returnPoilcy/return.route'
 import { CuponRoute } from '../modules/cupon/cupon.route'
+import { CurrencyRoute } from '../modules/currency/currency.route'
 // import { OfferRoute } from '../modules/offer/offer.route'
 
 const router = express.Router()
@@ -98,6 +99,10 @@ const routes = [
   {
     path: '/cupon',
     route: CuponRoute,
+  },
+  {
+    path: '/currency',
+    route: CurrencyRoute,
   },
 ]
 
