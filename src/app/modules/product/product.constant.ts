@@ -24,4 +24,4 @@ export const PRODUCT_FILTER_FIELDS = [
   'fabric',
 ]
 
-export const IMAGE_URL = `http://localhost:8000/images/product`
+export const IMAGE_URL = `https://server.aymifashion.com/images/product`
