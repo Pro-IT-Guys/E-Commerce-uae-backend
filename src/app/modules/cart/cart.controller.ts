@@ -85,6 +85,25 @@ const deleteAProductFromCart = catchAsync(
   }
 )
 
+const updateProductQuantity = catchAsync(
+  async (req: Request, res: Response) => {
+    const cartId = req.params.id
+    const productId = req.params.productId
+    const quantity = req.body.quantity
+    const cart = await CartService.updateProductQuantity(
+      cartId,
+      productId,
+      quantity
+    )
+
+    const responseData = {
+      data: cart,
+      message: 'Product quantity updated successfully',
+    }
+    sendSuccessResponse(res, responseData)
+  }
+)
+
 export const CartController = {
   addToCart,
   updateCart,
@@ -93,4 +112,5 @@ export const CartController = {
   getCartByCartId,
   deleteCart,
   deleteAProductFromCart,
+  updateProductQuantity,
 }
