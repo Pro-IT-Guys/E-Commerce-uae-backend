@@ -17,7 +17,7 @@ export interface IProduct {
   color: string[]
   size: string[]
   tag: string[]
-  brand: string
+  brand?: string
   review?: Schema.Types.ObjectId[] // productReview id ref
   type: string[]
   style: string

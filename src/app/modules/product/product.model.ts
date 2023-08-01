@@ -75,7 +75,6 @@ const productSchema = new Schema<IProduct>(
     },
     brand: {
       type: String,
-      required: true,
     },
     review: {
       type: [Schema.Types.ObjectId],
