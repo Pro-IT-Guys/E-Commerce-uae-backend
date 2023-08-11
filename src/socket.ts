@@ -1,6 +1,6 @@
 // const io = require('socket.io')(8080, {
 //   cors: {
-//     origin: 'https://aymifashion.com',
+//     origin: 'http://localhost:3000',
 //     methods: ['GET', 'POST'],
 //   },
 // })

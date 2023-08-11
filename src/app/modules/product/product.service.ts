@@ -9,7 +9,7 @@ import {
 import { PRODUCT_SEARCH_FIELDS } from './product.constant'
 import paginationHelper from '../../helpers/paginationHelper'
 import { SortOrder } from 'mongoose'
-import { generateProductSKU } from '../../helpers/generateProductSku'
+import { generateProductSKU } from '../../helpers/generateProductSKU'
 
 const createProduct = async (productData: IProduct): Promise<IProduct> => {
   // let sku = generateUniqueSKU(6)
