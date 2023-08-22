@@ -6,7 +6,7 @@ const fileUpload: RequestHandler = catchAsync(async (req, res) => {
     if (req.file) {
       res.json({
         status: 'success',
-        url: `http://localhost:8000/images/product/${req.file.filename}`,
+        url: `https://server.aymifashion.com/images/product/${req.file.filename}`,
       })
     } else {
       res.json({
@@ -29,7 +29,9 @@ const multiFileUploads: RequestHandler = catchAsync(async (req, res) => {
     const imageUrl: string[] = []
     ;(req.files as Express.Multer.File[]).forEach(
       (img: Express.Multer.File) => {
-        imageUrl.push(`http://localhost:8000/images/product/${img.filename}`)
+        imageUrl.push(
+          `https://server.aymifashion.com/images/product/${img.filename}`
+        )
       }
     )
 
